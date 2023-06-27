@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /* Global styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    /* Container styles */
+    #questionnaire {
+      background-color: #E9EEF1;
+      padding: 30px;
+      border-radius: 25px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    /* Question styles */
+    .question {
+      margin-bottom: 20px;
+    }
+    .question p {
+      color: black;
+      font-size: 24px;
+    }
+    /* Answer button styles */
+    .answerBtn {
+      padding: 15px 30px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      transition: background-color 0.3s ease;
+      width: 100%; /* Set button width to 100% */
+      box-sizing: border-box; /* Include padding in the width calculation */
+    }
+    .answerBtn:hover {
+      background-color: #2b365d;
+    }
+    .answerBtn.a,
+    .answerBtn.b,
+    .answerBtn.c,
+    .answerBtn.d {
+      background-color: #3E4EB8;
+      color: white;
+    }
+    /* Result container styles */
+    .resultContainer {
+      background-color: #E9EEF1;
+      padding: 30px;
+      border-radius: 25px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .resultTitle {
+      color: black;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .partContainer {
+      margin-bottom: 30px;
+    }
+    .partTitle {
+      color: #3E4EB8;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .partText {
+      color: black;
+      font-size: 18px;
+      text-align: left;
+    }
+    /* Responsive styles */
+    @media (max-width: 600px) {
+      #questionnaire {
+        padding: 20px;
+      }
+      .answerBtn {
+        font-size: 14px;
+        padding: 10px 20px;
+        margin-bottom: 8px;
+      }
+      .resultContainer {
+        padding: 20px;
+      }
+      .resultTitle {
+        font-size: 24px;
+      }
+      .partTitle {
+        font-size: 20px;
+      }
+      .partText {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="embedForm" style="display: block;">
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+  <script>
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "9206478",
+      formId: "9c629464-a9e5-4908-866a-1b8071a290f8",
+      onFormSubmit: function() {
+        document.getElementById("embedForm").style.display = "none";
+        document.getElementById("questionnaire").style.display = "block";
+      }
+    });
+  </script>
+</div>
+  <div id="questionnaire" style="display: none;">
+ 
+  <div id="questionsContainer">
+    <div id="question1">
+      <p id="questionText1"></p>
+      <div>
+        <button id="answerBtn1a" class="answerBtn a"></button>
+        <button id="answerBtn1b" class="answerBtn b"></button>
+        <button id="answerBtn1c" class="answerBtn c"></button>
+        <button id="answerBtn1d" class="answerBtn d"></button>
+      </div>
+    </div>
+    <div id="question2" style="display: none;">
+      <p id="questionText2"></p>
+      <div>
+        <button id="answerBtn2a" class="answerBtn a"></button>
+        <button id="answerBtn2b" class="answerBtn b"></button>
+        <button id="answerBtn2c" class="answerBtn c"></button>
+        <button id="answerBtn2d" class="answerBtn d"></button>
+      </div>
+    </div>
+    <div id="question3" style="display: none;">
+      <p id="questionText3"></p>
+      <div>
+        <button id="answerBtn3a" class="answerBtn a"></button>
+        <button id="answerBtn3b" class="answerBtn b"></button>
+        <button id="answerBtn3c" class="answerBtn c"></button>
+        <button id="answerBtn3d" class="answerBtn d"></button>
+      </div>
+    </div>
+    <div id="question4" style="display: none;">
+      <p id="questionText4"></p>
+      <div>
+        <button id="answerBtn4a" class="answerBtn a"></button>
+        <button id="answerBtn4b" class="answerBtn b"></button>
+        <button id="answerBtn4c" class="answerBtn c"></button>
+        <button id="answerBtn4d" class="answerBtn d"></button>
+      </div>
+    </div>
+    <div id="question5" style="display: none;">
+      <p id="questionText5"></p>
+      <div>
+        <button id="answerBtn5a" class="answerBtn a"></button>
+        <button id="answerBtn5b" class="answerBtn b"></button>
+        <button id="answerBtn5c" class="answerBtn c"></button>
+        <button id="answerBtn5d" class="answerBtn d"></button>
+      </div>
+    </div>
+    <div id="question6" style="display: none;">
+      <p id="questionText6"></p>
+      <div>
+        <button id="answerBtn6a" class="answerBtn a"></button>
+        <button id="answerBtn6b" class="answerBtn b"></button>
+        <button id="answerBtn6c" class="answerBtn c"></button>
+        <button id="answerBtn6d" class="answerBtn d"></button>
+      </div>
+    </div>
+    <div id="question7" style="display: none;">
+      <p id="questionText7"></p>
+      <div>
+        <button id="answerBtn7a" class="answerBtn a"></button>
+        <button id="answerBtn7b" class="answerBtn b"></button>
+        <button id="answerBtn7c" class="answerBtn c"></button>
+        <button id="answerBtn7d" class="answerBtn d"></button>
+      </div>
+    </div>
+    <div id="question8" style="display: none;">
+      <p id="questionText8"></p>
+      <div>
+        <button id="answerBtn8a" class="answerBtn a"></button>
+        <button id="answerBtn8b" class="answerBtn b"></button>
+        <button id="answerBtn8c" class="answerBtn c"></button>
+        <button id="answerBtn8d" class="answerBtn d"></button>
+      </div>
+    </div>
+    <div id="question9" style="display: none;">
+      <p id="questionText9"></p>
+      <div>
+        <button id="answerBtn9a" class="answerBtn a"></button>
+        <button id="answerBtn9b" class="answerBtn b"></button>
+        <button id="answerBtn9c" class="answerBtn c"></button>
+        <button id="answerBtn9d" class="answerBtn d"></button>
+      </div>
+    </div>
+    <div id="question10" style="display: none;">
+      <p id="questionText10"></p>
+      <div>
+        <button id="answerBtn10a" class="answerBtn a"></button>
+        <button id="answerBtn10b" class="answerBtn b"></button>
+        <button id="answerBtn10c" class="answerBtn c"></button>
+        <button id="answerBtn10d" class="answerBtn d"></button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div id="resultContainer" style="display: none;">
+    <h3 id="resultTitle" class="resultTitle"></h3>
+    <div id="part1Container" class="partContainer">
+      <h4 id="part1Title" class="partTitle"></h4>
+      <p id="part1Text" class="partText"></p>
+    </div>
+    <div id="part2Container" class="partContainer">
+      <h4 id="part2Title" class="partTitle"></h4>
+      <p id="part2Text" class="partText"></p>
+    </div>
+  </div>
+</div>
+<script>
+  var answers = {
+    answer1: "",
+    answer2: "",
+    answer3: "",
+    answer4: "",
+    answer5: "",
+    answer6: "",
+    answer7: "",
+    answer8: "",
+    answer9: "",
+    answer10: ""
+  };
+  var questions = [
+    {
+      question: "How would you describe your team's approach to handling incoming customer queries?",
+      answers: [
+        { option: "a", text: "Our team is primarily focused on resolving tickets as quickly as possible." },
+        { option: "b", text: "We have some processes in place to help manage queries more efficiently." },
+        { option: "c", text: "Our team proactively identifies potential issues and mitigates them before they become problems." },
+        { option: "d", text: "We leverage data-driven insights to anticipate customer needs and tailor our services accordingly." }
+      ]
+    },
+    {
+      question: "How are customer issues categorized in your team?",
+      answers: [
+        { option: "a", text: "We rely heavily on agents manually tagging and categorizing issues." },
+        { option: "b", text: "We have some automated tagging systems in place but still rely on manual input." },
+        { option: "c", text: "Most of our categorization process is automated, allowing us to quickly analyze top CX issues." },
+        { option: "d", text: "Our tagging and categorization system is completely automated and continuously optimized based on data-driven insights." }
+      ]
+    },
+    {
+      question: "How does your team use data-driven insights in daily operations?",
+      answers: [
+        { option: "a", text: "We're still figuring out how to best leverage the data we collect." },
+        { option: "b", text: "We occasionally review our data to identify potential improvements." },
+        { option: "c", text: "Data-driven insights heavily influence our CX processes." },
+        { option: "d", text: "We have integrated data analytics into our operations, continuously optimizing based on these insights." }
+      ]
+    },
+    {
+      question: "How does your team manage customer service automation?",
+      answers: [
+        { option: "a", text: "We have not yet implemented any form of automation." },
+        { option: "b", text: "We use automation for a few basic tasks but haven't fully optimized its use." },
+        { option: "c", text: "We have numerous automated processes in place and are always looking to improve." },
+        { option: "d", text: "Our operations are heavily automated, enabling us to focus on strategic decision-making and proactive customer service." }
+      ]
+    },
+    {
+      question: "How does your team identify operational bottlenecks and new automation opportunities?",
+      answers: [
+        { option: "a", text: "We rely on feedback from agents and customers to identify bottlenecks." },
+        { option: "b", text: "We use basic analytics to identify problem areas." },
+        { option: "c", text: "We have a defined process to transform insights into actionable solutions." },
+        { option: "d", text: "We proactively identify potential bottlenecks through advanced analytics and predictive modeling." }
+      ]
+    },
+    {
+      question: "How does your team respond to new product releases or changes in the market?",
+      answers: [
+        { option: "a", text: "We generally react to these changes as they occur." },
+        { option: "b", text: "We attempt to anticipate these changes and prepare accordingly." },
+        { option: "c", text: "We quickly adapt our operations and build new automations to accommodate these changes." },
+        { option: "d", text: "Our team uses predictive analytics to anticipate changes and optimize our operations proactively." }
+      ]
+    },
+    {
+      question: "How does your team prioritize which customer issues to address?",
+      answers: [
+        { option: "a", text: "We address issues as they come in, regardless of their impact." },
+        { option: "b", text: "We attempt to prioritize issues based on their perceived importance." },
+        { option: "c", text: "We take a proactive approach, focusing on the issues that need attention." },
+        { option: "d", text: "We use data-driven insights to prioritize issues based on their potential impact on revenue." }
+      ]
+    },
+    {
+      question: "How does your team handle changes that impact CX and other teams?",
+      answers: [
+        { option: "a", text: "We adjust our operations as necessary after the change has occurred." },
+        { option: "b", text: "We plan for possible changes and adjust our operations accordingly." },
+        { option: "c", text: "We can quickly react and adapt our operations to handle changes." },
+        { option: "d", text: "We use predictive analytics to anticipate changes and optimize our operations proactively." }
+      ]
+    },
+    {
+      question: "How does your team identify and prioritize issues related to customer churn or purchasing behaviors?",
+      answers: [
+        { option: "a", text: "We occasionally review our data to identify these issues." },
+        { option: "b", text: "We regularly analyze our data to prioritize these issues." },
+        { option: "c", text: "We use advanced analytics to identify these issues and prioritize fixes." },
+        { option: "d", text: "We use predictive analytics to anticipate potential issues and prioritize those that have a direct impact on revenue." }
+      ]
+    },
+    {
+      question: "How does your team operationalize automation?",
+      answers: [
+        { option: "a", text: "Our automation is primarily focused on reducing costs." },
+        { option: "b", text: "We use automation to both save costs and improve customer experience." },
+        { option: "c", text: "Our automation strategies are primarily designed to drive revenue, ahead of savings." },
+        { option: "d", text: "We leverage predictive analytics to optimize automation strategies, driving revenue growth and enhancing customer journey at every touchpoint." }
+      ]
+    }
+  ];
+  var counter = 0;
+
+  function showQuestion() {
+    document.getElementById("questionText1").innerText = questions[0].question;
+    document.getElementById("questionText2").innerText = questions[1].question;
+    document.getElementById("questionText3").innerText = questions[2].question;
+    document.getElementById("questionText4").innerText = questions[3].question;
+    document.getElementById("questionText5").innerText = questions[4].question;
+    document.getElementById("questionText6").innerText = questions[5].question;
+    document.getElementById("questionText7").innerText = questions[6].question;
+    document.getElementById("questionText8").innerText = questions[7].question;
+    document.getElementById("questionText9").innerText = questions[8].question;
+    document.getElementById("questionText10").innerText = questions[9].question;
+    document.getElementById("question1").style.display = "block";
+  }
+  
+  var pointMap = {
+    "a": 1,
+    "b": 2,
+    "c": 3,
+    "d": 4
+  };
+
+  function handleAnswer(event) {
+    var option = event.target.id.charAt(event.target.id.length - 1);
+    answers["answer" + (counter + 1)] = pointMap[option];
+    counter++;
+    if (counter === 1) {
+      document.getElementById("question1").style.display = "none";
+      document.getElementById("question2").style.display = "block";
+    } else if (counter === 2) {
+      document.getElementById("question2").style.display = "none";
+      document.getElementById("question3").style.display = "block";
+    } else if (counter === 3) {
+      document.getElementById("question3").style.display = "none";
+      document.getElementById("question4").style.display = "block";
+    } else if (counter === 4) {
+      document.getElementById("question4").style.display = "none";
+      document.getElementById("question5").style.display = "block";
+    } else if (counter === 5) {
+      document.getElementById("question5").style.display = "none";
+      document.getElementById("question6").style.display = "block";
+    } else if (counter === 6) {
+      document.getElementById("question6").style.display = "none";
+      document.getElementById("question7").style.display = "block";
+    } else if (counter === 7) {
+      document.getElementById("question7").style.display = "none";
+      document.getElementById("question8").style.display = "block";
+    } else if (counter === 8) {
+      document.getElementById("question8").style.display = "none";
+      document.getElementById("question9").style.display = "block";
+    } else if (counter === 9) {
+      document.getElementById("question9").style.display = "none";
+      document.getElementById("question10").style.display = "block";
+    } else if (counter === 10) {
+      document.getElementById("question10").style.display = "none";
+      calculateResult();
+    }
+  }
+
+   function calculateResult() {
+    var pointsPart1 = parseInt(answers.answer1) + parseInt(answers.answer2) + parseInt(answers.answer3) + parseInt(answers.answer4) + parseInt(answers.answer5)+ parseInt(answers.answer6) + parseInt(answers.answer7) + parseInt(answers.answer8) + parseInt(answers.answer9) + parseInt(answers.answer10);
+
+ var resultTitle = document.getElementById("resultTitle");
+    var part1Title = document.getElementById("part1Title");
+    var part1Text = document.getElementById("part1Text");
+    var part2Title = document.getElementById("part2Title");
+    var part2Text = document.getElementById("part2Text");
+
+    if (pointsPart1 >= 10 && pointsPart1 <= 16) {
+      resultTitle.innerText = "Getting started — Reactive";
+      part1Title.innerText = "Reactive CX teams:";
+      part1Text.innerHTML = "- Spend too much time doing manual work such as tagging and triaging tickets, which becomes a real slog due to the wide variety of issues and levels of knowledge in the team.<br>- Struggle to have a sense of top CX issues as they rely on agents accurately picking from a defined list of tags.<br>- Have difficulty finding the top opportunities for automation for their team.";
+      document.getElementById("resultContainer").style.display = "block";
+    } else if (pointsPart1 >= 17 && pointsPart1 <= 23) {
+      resultTitle.innerText = "Building the foundation — Analytical";
+      part1Title.innerText = "Analytical CX teams:";
+      part1Text.innerHTML = "- Have freed management and agents from time-consuming manual tasks to focus on better customer experience.<br>- Have great insights on the top CX issues but don’t have the ability or time to build automation that simplifies the process.<br>- Make data-driven decisions about their CX process but may struggle to funnel insights and tickets into other teams to impact other areas of the business.";
+      document.getElementById("resultContainer").style.display = "block";
+    } else if (pointsPart1 >= 24 && pointsPart1 <= 30) {
+      resultTitle.innerText = "Transforming insights into action — Operational";
+      part1Title.innerText = "Operational CX teams:";
+      part1Text.innerHTML = "- Have built a process to transform insights into action — to automate how to deal with tickets efficiently.<br>- Have efficient routing, escalation, agent assist, and/or conversational bots that help deal with a significant percentage of inbound issues.<br>- Lack a proactive way to identify operational bottlenecks for new automation opportunities other than agent shadowing.";
+      document.getElementById("resultContainer").style.display = "block";
+    } else if (pointsPart1 >= 31 && pointsPart1 <= 37) {
+      resultTitle.innerText = "Optimizing automation — Proactive";
+      part1Title.innerText = "Proactive CX teams:";
+      part1Text.innerHTML = "- Take a proactive approach to their CX process by focusing on the issues that need attention.<br>- Can quickly react to a new product release or change in the market to build new automations that help CX and other teams.<br>- Want to evolve from driving operational improvements to driving changes that grow revenue for the company.";
+      document.getElementById("resultContainer").style.display = "block";
+    } else if (pointsPart1 >= 38 && pointsPart1 <= 40) {
+      resultTitle.innerText = "Driving revenue — Predictive";
+      part1Title.innerText = "Predictive CX teams:";
+      part1Text.innerHTML = "- Can identify which issues are correlated with churn or purchasing behaviors, prioritizing fixes that impact the top line.<br>- Operationalize automation in a way that puts revenue before savings, impacting Product, Marketing & other top-line teams.<br>- Evolve from proactive to predictive analytics tailored to where each customer is on the customer journey to ensure they have the best experience. This, in turn, drives retention and upsell opportunities.";
+      document.getElementById("resultContainer").style.display = "block";
+    }
+  }
+
+
+function showQuestion() {
+  document.getElementById("questionText1").innerText = questions[0].question;
+  document.getElementById("questionText2").innerText = questions[1].question;
+  document.getElementById("questionText3").innerText = questions[2].question;
+  document.getElementById("questionText4").innerText = questions[3].question;
+  document.getElementById("questionText5").innerText = questions[4].question;
+  document.getElementById("questionText6").innerText = questions[5].question;
+  document.getElementById("questionText7").innerText = questions[6].question;
+  document.getElementById("questionText8").innerText = questions[7].question;
+  document.getElementById("questionText9").innerText = questions[8].question;
+  document.getElementById("questionText10").innerText = questions[9].question;
+  document.getElementById("question1").style.display = "block";
+}
+
+function updateAnswerOptions(questionNumber) { var questionId = "question" + (questionNumber + 1); var answers = questions[questionNumber].answers; var answerBtns = document.querySelectorAll("#" + questionId + " .answerBtn"); for (var i = 0; i < answerBtns.length; i++) { answerBtns[i].textContent = answers[i].text; } }
+// Add event listeners to answer buttons
+document.getElementById("answerBtn1a").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn1b").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn1c").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn1d").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn2a").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn2b").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn2c").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn2d").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn3a").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn3b").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn3c").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn3d").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn4a").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn4b").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn4c").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn4d").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn5a").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn5b").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn5c").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn5d").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn6a").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn6b").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn6c").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn6d").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn7a").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn7b").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn7c").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn7d").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn8a").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn8b").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn8c").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn8d").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn9a").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn9b").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn9c").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn9d").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn10a").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn10b").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn10c").addEventListener("click", handleAnswer);
+document.getElementById("answerBtn10d").addEventListener("click", handleAnswer);
+updateAnswerOptions(0);
+updateAnswerOptions(1);
+updateAnswerOptions(2);
+updateAnswerOptions(3);
+updateAnswerOptions(4);
+updateAnswerOptions(5);
+updateAnswerOptions(6);
+updateAnswerOptions(7);
+updateAnswerOptions(8);
+updateAnswerOptions(9);
+
+
+
+showQuestion();
+</script>
+</body>
+</html>
